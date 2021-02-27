@@ -15,11 +15,14 @@ public class DataVerification {
 	}
 	
 	public static boolean isLetter(String input) {
-		//if (input.matches("[A-Z]{1}[a-z]+$")) {
-		//	return true;
-		//} else {
-		//	return false;
-		//}
 		return (input.matches("[A-Z]{1}[a-z]+$"));
+	}
+	
+	public static boolean isValidGrade(int value) {
+		if (value >= 1 && value <= 10) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
