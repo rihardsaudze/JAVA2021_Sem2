@@ -75,7 +75,7 @@ public class Professor {
 	
 	//4. toString
 	public String toString() {
-		return p_ID + ":" + name + " " + surname + "," + degree;
+		return p_ID + ":" + name + " " + surname + ", " + degree;
 	}
 	
 	//5. other functions

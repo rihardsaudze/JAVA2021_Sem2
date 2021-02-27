@@ -54,7 +54,7 @@ public class Course {
 	}
 	
 	public String toString() {
-		return c_ID + ":" + title + " " + creditPoints + "," + professor.getName() + " " + professor.getSurname();
+		return c_ID + ":" + title + ", " + professor.getName() + " " + professor.getSurname() + ", " + creditPoints;
 	}
 	
 }

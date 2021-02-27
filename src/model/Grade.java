@@ -60,6 +60,6 @@ public class Grade {
 	}
 	
 	public String toString() {
-		return g_ID + ":" + value + " " + student.getName() + " " + student.getSurname() + "," + course.getTitle();
+		return g_ID + ":" + course.getTitle() + ", " + student.getName() + " " + student.getSurname() + ", " + value;
 	}
 }
