@@ -4,7 +4,7 @@ import utils.DataVerification;
 
 public class Grade {
 	private long g_ID;
-	private int value;
+	private byte value;
 	private Student student;
 	private Course course;
 	private static long idCounter = 200000;
@@ -21,7 +21,7 @@ public class Grade {
 		return value;
 	}
 	
-	public void setValue(int value) {
+	public void setValue(byte value) {
 		if (DataVerification.isValidGrade(value)) {
 			this.value = value;		
 		} else {
@@ -34,7 +34,11 @@ public class Grade {
 	}
 	
 	public void setStudent(Student student) {
-		this.student = student;
+		if (student != null) {
+			this.student = student;
+		} else {
+			this.student = new Student();
+		}
 	}
 	
 	public Course getCourse() {
@@ -42,7 +46,11 @@ public class Grade {
 	}
 	
 	public void setCourse(Course course) {
-		this.course = course;
+		if (course != null) {
+			this.course = course;
+		} else {
+			this.course = new Course();
+		}
 	}
 	
 	public Grade() {
@@ -52,7 +60,7 @@ public class Grade {
 		this.course = new Course();
 	}
 	
-	public Grade(int value, Student student, Course course) {
+	public Grade(byte value, Student student, Course course) {
 		setG_ID();
 		setValue(value);
 		setStudent(student);

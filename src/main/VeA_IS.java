@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import model.*;
 
 public class VeA_IS {
-	public static ArrayList<Professor> profList = new ArrayList<>();
-	public static ArrayList<Student> studList = new ArrayList<>();
-	public static ArrayList<Course> courList = new ArrayList<>();
-	public static ArrayList<Grade> gradList = new ArrayList<>();
+	private static ArrayList<Professor> profList = new ArrayList<>();
+	private static ArrayList<Student> studList = new ArrayList<>();
+	private static ArrayList<Course> courList = new ArrayList<>();
+	private static ArrayList<Grade> gradList = new ArrayList<>();
 	
 	public static void main(String[] args) {
 		
@@ -19,32 +19,45 @@ public class VeA_IS {
 		studList.add(testStud);
 		testStud = new Student("Emīls", "Vēveris", DegreeType.Bsc);
 		studList.add(testStud);
+		testStud = new Student("Andrejs", "Dzelme", DegreeType.Bsc);
+		studList.add(testStud);
 		
 		Course testCour = new Course("OOP II", (byte)4, profList.get(0));					//Courses
 		courList.add(testCour);
 		testCour = new Course("IPTI", (byte)2, profList.get(1));
 		courList.add(testCour);
 
-		Grade testGrad = new Grade(5, studList.get(0), courList.get(0));			//Rihards' grades
+		Grade testGrad = new Grade((byte)5, studList.get(0), courList.get(0));			//Rihards' grades
 		gradList.add(testGrad);
-		testGrad = new Grade(2, studList.get(0), courList.get(0));
+		testGrad = new Grade((byte)2, studList.get(0), courList.get(0));
 		gradList.add(testGrad);
-		testGrad = new Grade(9, studList.get(0), courList.get(0));
+		testGrad = new Grade((byte)9, studList.get(0), courList.get(0));
 		gradList.add(testGrad);
-		testGrad = new Grade(6, studList.get(0), courList.get(1));
+		testGrad = new Grade((byte)6, studList.get(0), courList.get(1));
 		gradList.add(testGrad);
-		testGrad = new Grade(7, studList.get(0), courList.get(1));
+		testGrad = new Grade((byte)7, studList.get(0), courList.get(1));
 		gradList.add(testGrad);
 		
-		testGrad = new Grade(9, studList.get(1), courList.get(0));					//Emīls' grades
+		testGrad = new Grade((byte)9, studList.get(1), courList.get(0));					//Emīls' grades
 		gradList.add(testGrad);
-		testGrad = new Grade(10, studList.get(1), courList.get(0));
+		testGrad = new Grade((byte)10, studList.get(1), courList.get(0));
 		gradList.add(testGrad);
-		testGrad = new Grade(8, studList.get(1), courList.get(1));
+		testGrad = new Grade((byte)8, studList.get(1), courList.get(1));
 		gradList.add(testGrad);
-		testGrad = new Grade(5, studList.get(1), courList.get(1));
+		testGrad = new Grade((byte)5, studList.get(1), courList.get(1));
 		gradList.add(testGrad);
-		testGrad = new Grade(9, studList.get(1), courList.get(1));
+		testGrad = new Grade((byte)9, studList.get(1), courList.get(1));
+		gradList.add(testGrad);
+		
+		testGrad = new Grade((byte)9, studList.get(2), courList.get(0));					//Andrejs' grades
+		gradList.add(testGrad);
+		testGrad = new Grade((byte)9, studList.get(2), courList.get(1));
+		gradList.add(testGrad);
+		testGrad = new Grade((byte)9, studList.get(2), courList.get(1));
+		gradList.add(testGrad);
+		testGrad = new Grade((byte)8, studList.get(2), courList.get(0));
+		gradList.add(testGrad);
+		testGrad = new Grade((byte)10, studList.get(2), courList.get(1));
 		gradList.add(testGrad);
 		
 		System.out.println("" + testProf.toString());
@@ -52,8 +65,12 @@ public class VeA_IS {
 		System.out.println("" + testCour.toString());
 		System.out.println("" + testGrad.toString());
 
-		System.out.println("Riharda vidējā atzīme: " + calcAverageStudentGrade(testStud));
-		System.out.println("Riharda vidējā svērtā atzīme: " + calcAverageStudentGradeCP(testStud));
+		System.out.println("Riharda vidējā atzīme: " + calcAverageStudentGrade(studList.get(0)));
+		System.out.println("Riharda vidējā svērtā atzīme: " + calcAverageStudentGradeCP(studList.get(0)));
+		System.out.println("Emīla vidējā atzīme: " + calcAverageStudentGrade(studList.get(1)));
+		System.out.println("Emīla vidējā svērtā atzīme: " + calcAverageStudentGradeCP(studList.get(1)));
+		System.out.println("Andreja vidējā atzīme: " + calcAverageStudentGrade(studList.get(2)));
+		System.out.println("Andreja vidējā svērtā atzīme: " + calcAverageStudentGradeCP(studList.get(2)));
 		
 		System.out.println("Vidējā atzīme OOP II: " + calcAverageGrade(courList.get(0)));
 
