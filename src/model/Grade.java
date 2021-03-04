@@ -47,9 +47,9 @@ public class Grade {
 	
 	public Grade() {
 		setG_ID();
-		value = 0;
-		student = new Student();
-		course = new Course();
+		this.value = 0;
+		this.student = new Student();
+		this.course = new Course();
 	}
 	
 	public Grade(int value, Student student, Course course) {

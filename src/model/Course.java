@@ -3,7 +3,7 @@ package model;
 public class Course {
 	private long c_ID;
 	private String title;
-	private int creditPoints;
+	private byte creditPoints;
 	private Professor professor;
 	private static long idCounter = 100000;
 	
@@ -12,7 +12,7 @@ public class Course {
 	}
 	
 	public void setC_ID() {
-		this.c_ID = idCounter++;;
+		this.c_ID = idCounter++;
 	}
 	
 	public String getTitle() {
@@ -20,15 +20,23 @@ public class Course {
 	}
 	
 	public void setTitle(String title) {
-		this.title = title;
+		if (title != null) {
+			this.title = title;
+		} else {
+			this.title = "";
+		}
 	}
 	
 	public int getCreditPoints() {
 		return creditPoints;
 	}
 	
-	public void setCreditPoints(int creditPoints) {
-		this.creditPoints = creditPoints;
+	public void setCreditPoints(byte creditPoints) {
+		if (creditPoints > 0 && creditPoints <= 20) {
+			this.creditPoints = creditPoints;
+		} else {
+			this.creditPoints = 4;
+		}
 	}
 	
 	public Professor getProfessor() {
@@ -36,17 +44,21 @@ public class Course {
 	}
 	
 	public void setProfessor(Professor professor) {
-		this.professor = professor;
+		if (professor != null) {
+			this.professor = professor;
+		} else {
+			this.professor = new Professor();
+		}
 	}
 	
 	public Course() {
 		setC_ID();
-		title = "";
-		creditPoints = 0;
-		professor = new Professor();
+		this.title = "";
+		this.creditPoints = 4;
+		this.professor = new Professor();
 	}
 	
-	public Course(String title, int creditPoints, Professor professor) {
+	public Course(String title, byte creditPoints, Professor professor) {
 		setC_ID();
 		setTitle(title);
 		setCreditPoints(creditPoints);
@@ -54,7 +66,7 @@ public class Course {
 	}
 	
 	public String toString() {
-		return c_ID + ":" + title + ", " + professor.getName() + " " + professor.getSurname() + ", " + creditPoints;
+		return c_ID + ":" + title + ", " + professor.getName() + " " + professor.getSurname() + ", " + creditPoints + "KP";
 	}
 	
 }

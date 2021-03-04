@@ -61,9 +61,9 @@ public class Professor {
 	//3. constructors
 	public Professor() {
 		setP_ID();
-		name = "";
-		surname = "";
-		degree = DegreeType.Bsc;
+		this.name = "";
+		this.surname = "";
+		this.degree = DegreeType.Bsc;
 	}
 	
 	public Professor(String name, String surname, DegreeType degree) {

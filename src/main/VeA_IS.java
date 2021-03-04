@@ -10,22 +10,22 @@ public class VeA_IS {
 	
 	public static void main(String[] args) {
 		
-		Professor testProf = new Professor("Karina", "Šķirmante", DegreeType.PhD);	//Profesori
+		Professor testProf = new Professor("Karina", "Šķirmante", DegreeType.Mg);	//Professors
 		profList.add(testProf);
 		testProf = new Professor("Mārcis", "Donerblics", DegreeType.PhD);
 		profList.add(testProf);
 		
-		Student testStud = new Student("Rihards", "Audze", DegreeType.Bsc);		//Studenti
+		Student testStud = new Student("Rihards", "Audze", DegreeType.Bsc);			//Students
 		studList.add(testStud);
 		testStud = new Student("Emīls", "Vēveris", DegreeType.Bsc);
 		studList.add(testStud);
 		
-		Course testCour = new Course("OOP II", 4, profList.get(0));				//Kursi
+		Course testCour = new Course("OOP II", (byte)4, profList.get(0));					//Courses
 		courList.add(testCour);
-		testCour = new Course("IPTI", 2, profList.get(1));
+		testCour = new Course("IPTI", (byte)2, profList.get(1));
 		courList.add(testCour);
 
-		Grade testGrad = new Grade(5, studList.get(0), courList.get(0));		//Riharda atzīmes
+		Grade testGrad = new Grade(5, studList.get(0), courList.get(0));			//Rihards' grades
 		gradList.add(testGrad);
 		testGrad = new Grade(2, studList.get(0), courList.get(0));
 		gradList.add(testGrad);
@@ -36,7 +36,7 @@ public class VeA_IS {
 		testGrad = new Grade(7, studList.get(0), courList.get(1));
 		gradList.add(testGrad);
 		
-		testGrad = new Grade(9, studList.get(1), courList.get(0));				//Emīla atzīmes
+		testGrad = new Grade(9, studList.get(1), courList.get(0));					//Emīls' grades
 		gradList.add(testGrad);
 		testGrad = new Grade(10, studList.get(1), courList.get(0));
 		gradList.add(testGrad);

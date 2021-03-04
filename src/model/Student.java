@@ -47,8 +47,8 @@ public class Student {
 	//3. constructors
 	public Student() {
 		setSt_ID();
-		name = "";
-		surname = "";
+		this.name = "";
+		this.surname = "";
 	}
 	
 	public Student(String name, String surname, DegreeType degree) {
